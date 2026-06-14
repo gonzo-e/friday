@@ -17,7 +17,7 @@
   html{scroll-behavior:smooth}
   body{font-family:'Inter',-apple-system,sans-serif;background:var(--green-pale);color:var(--near-black);-webkit-font-smoothing:antialiased}
 
-  #scroll-bar{position:fixed;top:0;left:0;height:3px;background:var(--green-accent);width:0%;z-index:999;transition:width .1s linear}
+
 
 
 
@@ -131,7 +131,7 @@
 </head>
 <body>
 
-<div id="scroll-bar"></div>
+
 
 
 
@@ -289,11 +289,7 @@
 </footer>
 
 <script>
-const bar = document.getElementById('scroll-bar');
-window.addEventListener('scroll', () => {
-  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-  bar.style.width = Math.min(pct, 100) + '%';
-});
+
 
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
